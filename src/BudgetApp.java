@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.Collections;
+
 
 public class BudgetApp {
     public static void main(String[] args) {
@@ -25,7 +27,15 @@ public class BudgetApp {
     //         System.out.println("The budget limit for " + category + " was: " + limitString + 
     //                            " but the actual spend was " + spentString);
          }
+        Collections.sort(budgets, java.util.Collections.reverseOrder());
+
          System.out.println(budgets);
+
+         int totalDiff = budgetDifference(budgets);
+         System.out.println("Overall total difference: $" + totalDiff);
+
+         double overallPercent = budgetPercentage(budgets);
+         System.out.printf("Overall percentage over/under: %.2f%%\n", overallPercent);
  }
 
     /**
@@ -53,6 +63,22 @@ public class BudgetApp {
          
         return (int) totalDifference;
     }
+
+ public static double budgetPercentage(List<BudgetCategory> categories) {
+    double totalLimit = 0;
+    double totalDifference = 0;
+    
+    for (BudgetCategory category : categories) {
+        totalDifference += (category.getSpent() - category.getLimint());
+        totalLimit += category.getLimint();
+    }
+    if (totalLimit == 0) {
+        return 0.0;
+    }
+    return (totalDifference / totalLimit) * 100;
+
+ }
 }
+
       
 

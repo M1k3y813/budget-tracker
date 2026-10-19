@@ -1,4 +1,4 @@
-public class BudgetCategory {
+public class BudgetCategory implements Comparable<BudgetCategory> {
     
     private String name;
     private double limint;
@@ -13,7 +13,7 @@ public BudgetCategory(String name, double limint, double spent) {
  public String toString() {
     return name + "Budget: $ "+ limint + "Spent: $ "  +  spent; 
  }
-
+@Override 
  public int compareTo(BudgetCategory other) {
     double diff = spent - limint;
     double otherdiff = other.spent - other.limint;
