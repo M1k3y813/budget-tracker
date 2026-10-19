@@ -15,8 +15,8 @@ public BudgetCategory(String name, double limint, double spent) {
  }
 
  public int compareTo(BudgetCategory other) {
-    double diff = limint-spent;
-    double otherdiff = other.limint - other.spent;
+    double diff = spent - limint;
+    double otherdiff = other.spent - other.limint;
     if(diff<otherdiff) {
         return -1;
     }
