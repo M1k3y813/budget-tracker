@@ -1,0 +1,3 @@
+[Dining OutBudget: $ 120.0Spent: $ 185.0, EntertainmentBudget: $ 80.0Spent: $ 115.0, UtilitiesBudget: $ 150.0Spent: $ 165.0, RentBudget: $ 1350.0Spent: $ 1350.0, TransportationBudget: $ 200.0Spent: $ 190.0, GroceriesBudget: $ 400.0Spent: $ 375.0]
+Overall total difference: $80
+Overall percentage over/under: 3.48%
